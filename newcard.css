@@ -1,0 +1,64 @@
+body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.game{
+    display: flex;
+    height: 50%;
+    width: 40%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card input{
+display: none;
+}
+.card{
+    height: 200px;
+    width: 200px;
+    perspective: 700px;
+}
+.card-inner{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    cursor: pointer;
+}
+.card-front{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: cadetblue;
+    color: aqua;
+   font-size: 2rem;
+    backface-visibility: hidden;
+    
+}
+.card-back{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    font-size: 2rem;
+    background-color: blue;
+    color: aquamarine;
+    transform: rotateY(180deg);
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+.card input:checked + .card-inner{
+    transform: rotateY(180deg);
+}
